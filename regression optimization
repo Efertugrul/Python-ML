@@ -17,15 +17,13 @@ def gradient_slope(x, y, t, s):
   t_gradient = -(2/dataAmount) * sumOfSqErrors  
   return t_gradient
 
-#Your step_gradient function here
 def step_gradient(tAssume, sAssume, x, y, learningRate):
     t_gradient = gradient_intercept(x, y, tAssume, sAssume)
     s_gradient = gradient_slope(x, y, tAssume, sAssume)
     t = tAssume - (learningRate * t_gradient)
     s = sAssume - (learningRate * s_gradient)
     return [t, s]
-  
-#gradient_descent function here:  
+  #Main function
 def gradient_descent(x, y, learningRate, numIterations):
   t = 0
   s = 0
